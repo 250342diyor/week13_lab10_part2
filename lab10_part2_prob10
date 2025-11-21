@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+char to_lower(const char s){
+    if(s >= 'A' && s <= 'Z') return s + 32;
+    return s;
+}
+
+void countChar(const char* str, int& vowelCount, int& consonantCount){
+    vowelCount = 0;
+    consonantCount = 0;
+
+    while(*str != '\0'){
+        char c = to_lower(*str);
+        if(c >= 'a' && c <= 'z'){
+            if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+                vowelCount++;
+            else
+                consonantCount++;
+        }
+        str++;
+    }
+}
+
+int main(){
+    char str[200];
+    cout << "Enter a string: ";
+    cin.getline(str, 200);
+
+    int v, c;
+    countChar(str, v, c);
+
+    cout << "vowels: " << v << endl;
+    cout << "consonants: " << c;
+}
