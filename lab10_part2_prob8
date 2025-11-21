@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int cstrLength(char *c) {
+    int count = 0;
+    while (*c != '\0') {
+        count++;
+        c++;
+    }
+    return count;
+}
+int main() {
+    char str[200];
+    cout << "Enter a string: ";
+    cin.getline(str, 200);
+    cout<<"length is: "<<cstrLength(str)<<endl;
+    return 0;
+}
